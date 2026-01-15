@@ -5,10 +5,13 @@ const DB_HOST = "web-personal.vrz9mbn.mongodb.net"
 const API_VERSION = "v1";
 const IP_SERVER = "localhost"
 
+const JWT_SECRET_KEY = "jvnrhg79w9hfugf765tbnvsp88275bfpbsybgq9458alhfb"
+
 module.exports = {
     DB_USER,
     DB_PASSWORD,
     DB_HOST,
     API_VERSION,
     IP_SERVER,
+    JWT_SECRET_KEY,
 }
