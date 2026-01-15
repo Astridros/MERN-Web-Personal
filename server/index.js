@@ -1,15 +1,17 @@
 const mongoose = require("mongoose")
 const app = require("./app")
 
-const {
-    DB_USER, 
-    DB_PASSWORD, 
-    DB_HOST, 
-    API_VERSION, 
-    IP_SERVER
-} = require("./constants")
+require("dotenv").config();
 
-const PORT = process.env.POST || 3977
+const {
+    DB_USER,
+    DB_PASSWORD,
+    DB_HOST,
+    API_VERSION,
+    IP_SERVER,
+} = process.env;
+
+const PORT = process.env.PORT || 3977
 
 mongoose.connect(
     `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/`
