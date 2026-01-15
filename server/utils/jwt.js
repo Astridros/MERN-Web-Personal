@@ -1,5 +1,8 @@
 const jwt = require("jsonwebtoken");
-const {JWT_SECRET_KEY} = require("../constants");
+
+require("dotenv").config();
+
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 function createAccesToken(user){
     const expToken = new Date();
