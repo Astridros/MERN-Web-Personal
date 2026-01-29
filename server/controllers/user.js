@@ -26,7 +26,11 @@ async function getUsers(req, res){
         response = await User.find({active})
     }
 
-    res.status(200).send(response);
+    if(!response){
+        res.status(400).send({message:"No se ha encontrado ningun menu"});
+    }else{
+        res.status(200).send(response);
+    }
 } 
 
 async function createUser(req, res){
@@ -38,7 +42,7 @@ async function createUser(req, res){
     user.password = hasPassword;
 
     if(req.files.avatar){
-        const imagePath = image.getFilePath(req.files.avatar);
+        const imagePath = image.getFilePath(req.files.avatar, "avatar");
         user.avatar = imagePath;
     }
 

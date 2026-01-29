@@ -1,8 +1,8 @@
 const path = require("path");
 
-function getFilePath(file) {
+function getFilePath(file, type = "avatar") {
     return path.join(
-        "avatar",
+        type,
         path.basename(file.path)
     );
 }
