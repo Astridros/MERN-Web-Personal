@@ -42,7 +42,7 @@ async function createUser(req, res){
     user.password = hasPassword;
 
     if(req.files.avatar){
-        const imagePath = image.getFilePath(req.files.avatar);
+        const imagePath = image.getFilePath(req.files.avatar, "avatar");
         user.avatar = imagePath;
     }
 
